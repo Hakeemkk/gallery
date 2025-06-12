@@ -2,147 +2,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<script>
-  if (sessionStorage.getItem("loggedIn") !== "yes") {
-    window.location.href = "login.html";
-  }
-</script>
-
-<script>
-  if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "index.html";
-  }
-</script>
-
   <meta charset="UTF-8">
-  <title>حكيم جاليري - الصفحة الرئيسية</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>حكيم جاليري</title>
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
+      background-color: #fefefe;
+      color: #333;
+      padding: 20px;
+      line-height: 1.8;
+    }
+    .logo {
+      display: block;
+      max-width: 180px;
+      margin: 0 auto 20px auto;
+    }
+    h1 {
       text-align: center;
-    }
-    header {
-      background-color: #333;
-      color: gold;
-      padding: 30px 20px;
-      font-size: 32px;
-      font-weight: bold;
-    }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 30px;
-      gap: 20px;
-    }
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 220px;
-      padding: 15px;
-      transition: transform 0.3s;
-      text-decoration: none;
-      color: inherit;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card-title {
-      font-size: 18px;
+      font-size: 28px;
       margin-bottom: 10px;
+    }
+    .whatsapp-button {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
       font-weight: bold;
     }
-    footer {
-      background-color: #eee;
-      padding: 15px;
-      margin-top: 40px;
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
 <body>
-<script>
-  function checkPassword() {
-    const password = document.getElementById("pagePassword").value;
-    if (password === "hakim2025") {
-      sessionStorage.setItem("loggedIn", "yes");
-      document.getElementById("lockScreen").style.display = "none";
-    } else {
-      alert("كلمة السر غير صحيحة");
-    }
-  }
 
-  // Show lock screen if not logged in
-  window.onload = function() {
-    if (sessionStorage.getItem("loggedIn") !== "yes") {
-      document.getElementById("lockScreen").style.display = "flex";
-    }
-  }
-</script>
+<img src="لوجو.png" alt="شعار حكيم جاليري" class="logo">
+<h1>حكيم جاليري – كتالوج المنتجات</h1>
 
-<style>
-  #lockScreen {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(255,255,255,0.95);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    flex-direction: column;
-    font-family: 'Cairo', sans-serif;
-  }
+<p>الاسعار للجمله فقط للغرض التجاري وليس للغرض الشخصي.</p>
+<p>مدة تجهيز الاوردر حسب النوع: بعض المنتجات 3 ايام وبعض المنتجات 7 ايام.</p>
+<p>الأوردر المستعجل له حساب إضافي حسب التوفر.</p>
+<p>غير مسؤولين عن أي تلف أو مشكله تبع شركات الشحن.</p>
+<p>التوصيل بيبقا لاوردر بسيط، لكن لو شغلك كتير تعالا راجع عليه واستلمه من المكان بنفسك.</p>
+<p>ابعت تفاصيل الاوردر كاملة زي المقاس والنوع، وآي غلطة في المقاسات أو النوع على مسؤوليتك.</p>
+<p>لو هتحاسب فودافون كاش بتضيف 1% على إجمالي الاوردر.</p>
+<p>المكان مفتوح يومياً من 12 إلى 9 ما عدا يوم الجمعة.</p>
+<p>التصاميم الجديدة والغريبة ليها حساب مختلف لو أول مرة نعملها، وفي بعض التصاميم مش عندنا.</p>
+<p>شغل الجمله بإستمرار وبكمية، والكمية القليلة لا يحسب بسعر الجمله.</p>
+<p>لا يوجد حساب بالآجل، وبرجاء إستلام الاوردر في موعد أقصاه 2 يوم.</p>
+<p>لا يوجد تسليم اوردر قبل سداد مبلغ الاوردر بالكامل لأي ظرف.</p>
 
-  #lockScreen input {
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px;
-    width: 250px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    text-align: center;
-  }
+<a href="https://wa.me/201016176778" class="whatsapp-button" target="_blank">تواصل عبر واتساب</a>
 
-  #lockScreen button {
-    padding: 10px 20px;
-    background-color: #d4af37;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-</style>
-
-<div id="lockScreen">
-  <h2>يرجى إدخال كلمة المرور للدخول</h2>
-  <input type="password" id="pagePassword" placeholder="كلمة السر" />
-  <button onclick="checkPassword()">دخول</button>
-</div>
-
-
-<header>حكيم جاليري - كتالوج المنتجات</header>
-
-<div class="grid">
-  <a href="engraving.html" class="card"><div class="card-title">هدايا حفر</div></a>
-  <a href="printing.html" class="card"><div class="card-title">هدايا طباعة</div></a>
-  <a href="laser-materials.html" class="card"><div class="card-title">خامات ليزر</div></a>
-  <a href="handmade-materials.html" class="card"><div class="card-title">خامات هاند ميد</div></a>
-  <a href="boxes.html" class="card"><div class="card-title">تغليف وبوكسات</div></a>
-  <a href="cards.html" class="card"><div class="card-title">كروت صور وتابلوهات</div></a>
-  <a href="accessories.html" class="card"><div class="card-title">إكسسوارات شخصية</div></a>
-  <a href="home-decor.html" class="card"><div class="card-title">ديكورات منزلية</div></a>
-  <a href="offers.html" class="card"><div class="card-title">عروض وهدايا جاهزة</div></a>
-</div>
-
-<footer>&copy; 2025 حكيم جاليري - جميع الحقوق محفوظة</footer>
+<div class="footer">© 2025 حكيم جاليري - جميع الحقوق محفوظة</div>
 
 </body>
 </html>

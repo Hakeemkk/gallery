@@ -2,146 +2,82 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<script>
-  if (sessionStorage.getItem("loggedIn") !== "yes") {
-    window.location.href = "login.html";
-  }
-</script>
-
-<script>
-  if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "index.html";
-  }
-</script>
-
   <meta charset="UTF-8">
-  <title>خامات ليزر - حكيم جاليري</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تقطيع ليزر وحفر</title>
   <style>
     body {
       font-family: 'Cairo', sans-serif;
       background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #333;
-      color: gold;
       padding: 20px;
-      text-align: center;
-      font-size: 26px;
     }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-      gap: 20px;
-    }
-    .card {
-      background-color: white;
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 15px;
-      text-align: center;
-    }
-    .card img {
+    table {
       width: 100%;
-      border-radius: 6px;
-      margin-bottom: 10px;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .card h3 {
-      margin: 5px 0;
-      font-size: 18px;
-      color: #333;
-    }
-    .card p {
-      margin: 4px 0;
-      color: #666;
-    }
-    .logout {
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
       text-align: center;
-      margin-top: 10px;
     }
-    .logout button {
-      padding: 8px 15px;
-      border: none;
-      border-radius: 5px;
-      background-color: #d9534f;
+    th {
+      background-color: #2c3e50;
       color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .icon-link {
       cursor: pointer;
-    }
-    .logout button:hover {
-      background-color: #c9302c;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #eee;
-      margin-top: 20px;
+      color: #2980b9;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-<header>خامات ليزر - حكيم جاليري</header>
+<h2 style="text-align:center;">تقطيع ليزر وحفر</h2>
 
-<div class="container">
-
-  <div class="card">
-    <img src="https://via.placeholder.com/150x150?text=Wood+Keychain" alt="ميدالية خشب">
-    <h3>ميدالية خشب</h3>
-    <p>السعر: 15 جنيه</p>
-    <p>الحد الأدنى للجملة: 10 قطع</p>
-    <p>سعر البيع المقترح: 25 جنيه</p>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/150x150?text=Gift+Box" alt="بوكس هدايا صغير">
-    <h3>بوكس هدايا صغير</h3>
-    <p>السعر: 30 جنيه</p>
-    <p>الحد الأدنى للجملة: 5 قطع</p>
-    <p>سعر البيع المقترح: 50 جنيه</p>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/150x150?text=Card" alt="كرت تهنئة">
-    <h3>كرت تهنئة</h3>
-    <p>السعر: 10 جنيه</p>
-    <p>الحد الأدنى للجملة: 20 قطع</p>
-    <p>سعر البيع المقترح: 20 جنيه</p>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/150x150?text=Frame" alt="تابلوه ديكور">
-    <h3>تابلوه ديكور</h3>
-    <p>السعر: 45 جنيه</p>
-    <p>الحد الأدنى للجملة: 2 قطع</p>
-    <p>سعر البيع المقترح: 80 جنيه</p>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/150x150?text=Wallet" alt="محفظة جلد">
-    <h3>محفظة جلد</h3>
-    <p>السعر: 60 جنيه</p>
-    <p>الحد الأدنى للجملة: 3 قطع</p>
-    <p>سعر البيع المقترح: 100 جنيه</p>
-  </div>
-
-</div>
-
-<div class="logout">
-  <button onclick="logout()">تسجيل الخروج</button>
-</div>
-
-<footer>&copy; 2025 حكيم جاليري</footer>
+<table id="product-table">
+  <thead>
+    <tr>
+      <th>اسم المنتج</th>
+      <th>السعر</th>
+      <th>أقل عدد للجملة</th>
+      <th>السعر المقترح للبيع</th>
+      <th>الصورة</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
 <script>
-  function logout() {
-    localStorage.removeItem("authenticated");
-    window.location.href = "index.html";
-  }
+  const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS5SFEqYKsyaJx0OhgNo2yG7ZebejdFp9Eg1urBZeNcI6Jm6nhh-QltNVSXo03BXQw79RwYEN1_fK_H/pub?gid=1655563858&single=true&output=csv";
+
+  fetch(csvUrl)
+    .then(response => response.text())
+    .then(text => {
+      const rows = text.trim().split("\n").map(row => row.split(","));
+      const tableBody = document.querySelector("#product-table tbody");
+      tableBody.innerHTML = "";
+
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${row[0]}</td>
+          <td>${row[1]}</td>
+          <td>${row[2]}</td>
+          <td>${row[3]}</td>
+          <td><span class="icon-link" onclick="window.open('${row[4]}', '_blank')">📷</span></td>
+        `;
+        tableBody.appendChild(tr);
+      }
+    })
+    .catch(error => {
+      document.querySelector("tbody").innerHTML = "<tr><td colspan='5'>فشل في تحميل البيانات.</td></tr>";
+    });
 </script>
 
 </body>
