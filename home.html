@@ -65,6 +65,68 @@
   </style>
 </head>
 <body>
+<script>
+  function checkPassword() {
+    const password = document.getElementById("pagePassword").value;
+    if (password === "hakim2025") {
+      sessionStorage.setItem("loggedIn", "yes");
+      document.getElementById("lockScreen").style.display = "none";
+    } else {
+      alert("كلمة السر غير صحيحة");
+    }
+  }
+
+  // Show lock screen if not logged in
+  window.onload = function() {
+    if (sessionStorage.getItem("loggedIn") !== "yes") {
+      document.getElementById("lockScreen").style.display = "flex";
+    }
+  }
+</script>
+
+<style>
+  #lockScreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  #lockScreen input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+
+  #lockScreen button {
+    padding: 10px 20px;
+    background-color: #d4af37;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+
+<div id="lockScreen">
+  <h2>يرجى إدخال كلمة المرور للدخول</h2>
+  <input type="password" id="pagePassword" placeholder="كلمة السر" />
+  <button onclick="checkPassword()">دخول</button>
+</div>
+
 
 <header>حكيم جاليري - كتالوج المنتجات</header>
 
