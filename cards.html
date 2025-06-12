@@ -3,6 +3,12 @@
 <html lang="ar" dir="rtl">
 <head>
 <script>
+  if (sessionStorage.getItem("loggedIn") !== "yes") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<script>
   if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "index.html";
   }

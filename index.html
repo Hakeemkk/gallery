@@ -2,6 +2,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<script>
+  if (sessionStorage.getItem("loggedIn") !== "yes") {
+    window.location.href = "login.html";
+  }
+</script>
+
   <meta charset="UTF-8">
   <title>تسجيل الدخول - حكيم جاليري</title>
   <style>
