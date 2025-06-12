@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>
+  if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "index.html";
+  }
+</script>
+
+  <meta charset="UTF-8">
+  <title>عروض وهدايا جاهزة - حكيم جاليري</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: gold;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .card {
+      background-color: white;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      margin: 5px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .card p {
+      margin: 4px 0;
+      color: #666;
+    }
+    .logout {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .logout button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #d9534f;
+      color: white;
+      cursor: pointer;
+    }
+    .logout button:hover {
+      background-color: #c9302c;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>عروض وهدايا جاهزة - حكيم جاليري</header>
+
+<div class="container">
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150x150?text=Wood+Keychain" alt="ميدالية خشب">
+    <h3>ميدالية خشب</h3>
+    <p>السعر: 15 جنيه</p>
+    <p>الحد الأدنى للجملة: 10 قطع</p>
+    <p>سعر البيع المقترح: 25 جنيه</p>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150x150?text=Gift+Box" alt="بوكس هدايا صغير">
+    <h3>بوكس هدايا صغير</h3>
+    <p>السعر: 30 جنيه</p>
+    <p>الحد الأدنى للجملة: 5 قطع</p>
+    <p>سعر البيع المقترح: 50 جنيه</p>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150x150?text=Card" alt="كرت تهنئة">
+    <h3>كرت تهنئة</h3>
+    <p>السعر: 10 جنيه</p>
+    <p>الحد الأدنى للجملة: 20 قطع</p>
+    <p>سعر البيع المقترح: 20 جنيه</p>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150x150?text=Frame" alt="تابلوه ديكور">
+    <h3>تابلوه ديكور</h3>
+    <p>السعر: 45 جنيه</p>
+    <p>الحد الأدنى للجملة: 2 قطع</p>
+    <p>سعر البيع المقترح: 80 جنيه</p>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150x150?text=Wallet" alt="محفظة جلد">
+    <h3>محفظة جلد</h3>
+    <p>السعر: 60 جنيه</p>
+    <p>الحد الأدنى للجملة: 3 قطع</p>
+    <p>سعر البيع المقترح: 100 جنيه</p>
+  </div>
+
+</div>
+
+<div class="logout">
+  <button onclick="logout()">تسجيل الخروج</button>
+</div>
+
+<footer>&copy; 2025 حكيم جاليري</footer>
+
+<script>
+  function logout() {
+    localStorage.removeItem("authenticated");
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>

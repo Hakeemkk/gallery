@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>
+  if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "index.html";
+  }
+</script>
+
+  <meta charset="UTF-8">
+  <title>حكيم جاليري - الصفحة الرئيسية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #333;
+      color: gold;
+      padding: 30px 20px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 20px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      padding: 15px;
+      transition: transform 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #eee;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>حكيم جاليري - كتالوج المنتجات</header>
+
+<div class="grid">
+  <a href="engraving.html" class="card"><div class="card-title">هدايا حفر</div></a>
+  <a href="printing.html" class="card"><div class="card-title">هدايا طباعة</div></a>
+  <a href="laser-materials.html" class="card"><div class="card-title">خامات ليزر</div></a>
+  <a href="handmade-materials.html" class="card"><div class="card-title">خامات هاند ميد</div></a>
+  <a href="boxes.html" class="card"><div class="card-title">تغليف وبوكسات</div></a>
+  <a href="cards.html" class="card"><div class="card-title">كروت صور وتابلوهات</div></a>
+  <a href="accessories.html" class="card"><div class="card-title">إكسسوارات شخصية</div></a>
+  <a href="home-decor.html" class="card"><div class="card-title">ديكورات منزلية</div></a>
+  <a href="offers.html" class="card"><div class="card-title">عروض وهدايا جاهزة</div></a>
+</div>
+
+<footer>&copy; 2025 حكيم جاليري - جميع الحقوق محفوظة</footer>
+
+</body>
+</html>
